@@ -7,6 +7,9 @@ License:	unknown
 Group:		Applications
 Source0:	http://www.hick.org/code/skape/memgrep/%{name}-%{version}.tar.gz
 # Source0-md5:	b52da1eb88313206fd8ced1db9df1830
+Patch0:		%{name}-linux.patch
+URL:		http://www.uninformed.org/main.pl?action=codeView&codeId=19
+BuildRequires:	autoconf
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -21,24 +24,64 @@ zawarto¶ci pamiêci z dzia³aj±cych aplikacji lub plików core.
 Potencjalne zastosowania memgrepa obejmuj± reverse engineering,
 odpluskwianie oraz szacowanie dziur.
 
+%package devel
+Summary:	Header file for memgrep library
+Summary(pl):	Plik nag³ówkowy biblioteki memgrep
+Group:		Development/Libraries
+Requires:	%{name} = %{version}-%{release}
+
+%description devel
+Header file for memgrep library.
+
+%description devel -l pl
+Plik nag³ówkowy biblioteki memgrep.
+
+%package static
+Summary:	Static memgrep library
+Summary(pl):	Statyczna biblioteka memgrep
+Group:		Development/Libraries
+Requires:	%{name}-devel = %{version}-%{release}
+
+%description static
+Static memgrep library.
+
+%description static -l pl
+Statyczna biblioteka memgrep.
+
 %prep
 %setup -q
+%patch0 -p1
 
 %build
-%{__aclocal}
 %{__autoconf}
 %configure
 %{__make} \
 	CC="%{__cc}" \
-	FLAGS="%{rpmcflags}"
+	FLAGS="%{rpmcflags} -I`pwd`/include"
 
 %install
 rm -rf $RPM_BUILD_ROOT
+install -d $RPM_BUILD_ROOT{%{_bindir},%{_libdir},%{_includedir}}
 
-%{__make} install
+install memgrep $RPM_BUILD_ROOT%{_bindir}
+install *.so *.a $RPM_BUILD_ROOT%{_libdir}
+install include/memgrep.h $RPM_BUILD_ROOT%{_includedir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
+%doc ChangeLog
+%attr(755,root,root) %{_bindir}/memgrep
+%attr(755,root,root) %{_libdir}/heaplist.so
+%attr(755,root,root) %{_libdir}/libmemgrep.so
+
+%files devel
+%defattr(644,root,root,755)
+%doc docs/html/*.{css,html,png}
+%{_includedir}/memgrep.h
+
+%files static
+%defattr(644,root,root,755)
+%{_libdir}/libmemgrep.a
