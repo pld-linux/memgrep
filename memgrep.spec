@@ -1,5 +1,5 @@
-Summary:	search, replace or dump memory from running apps and core files
-Summary(pl):	Wersja grep dopuszczaj±ca b³êdy
+Summary:	Search, replace or dump memory from running apps and core files
+Summary(pl):	Przeszukiwanie, modyfikacja lub zrzucanie pamiêci z aplikacji lub plików core
 Name:		memgrep
 Version:	0.8.0
 Release:	1
@@ -10,7 +10,16 @@ Source0:	http://www.hick.org/code/skape/memgrep/%{name}-%{version}.tar.gz
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-memgrep is a tool to search, replace, or dump arbitrary memory from running applications and core files. Potential applications for memgrep include reverse engineering, debugging, and vulnerability assessment.
+memgrep is a tool to search, replace, or dump arbitrary memory from
+running applications and core files. Potential applications for
+memgrep include reverse engineering, debugging, and vulnerability
+assessment.
+
+%description -l pl
+memgrep to narzêdzie do przeszukiwania, modyfikowania lub zrzucania
+zawarto¶ci pamiêci z dzia³aj±cych aplikacji lub plików core.
+Potencjalne zastosowania memgrepa obejmuj± reverse engineering,
+odpluskwianie oraz szacowanie dziur.
 
 %prep
 %setup -q
