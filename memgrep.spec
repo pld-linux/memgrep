@@ -1,5 +1,5 @@
 Summary:	Search, replace or dump memory from running apps and core files
-Summary(pl):	Przeszukiwanie, modyfikacja lub zrzucanie pamiêci z aplikacji lub plików core
+Summary(pl.UTF-8):   Przeszukiwanie, modyfikacja lub zrzucanie pamiÄ™ci z aplikacji lub plikÃ³w core
 Name:		memgrep
 Version:	0.8.0
 Release:	1
@@ -18,34 +18,34 @@ running applications and core files. Potential applications for
 memgrep include reverse engineering, debugging, and vulnerability
 assessment.
 
-%description -l pl
-memgrep to narzêdzie do przeszukiwania, modyfikowania lub zrzucania
-zawarto¶ci pamiêci z dzia³aj±cych aplikacji lub plików core.
-Potencjalne zastosowania memgrepa obejmuj± reverse engineering,
+%description -l pl.UTF-8
+memgrep to narzÄ™dzie do przeszukiwania, modyfikowania lub zrzucania
+zawartoÅ›ci pamiÄ™ci z dziaÅ‚ajÄ…cych aplikacji lub plikÃ³w core.
+Potencjalne zastosowania memgrepa obejmujÄ… reverse engineering,
 odpluskwianie oraz szacowanie dziur.
 
 %package devel
 Summary:	Header file for memgrep library
-Summary(pl):	Plik nag³ówkowy biblioteki memgrep
+Summary(pl.UTF-8):   Plik nagÅ‚Ã³wkowy biblioteki memgrep
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
 %description devel
 Header file for memgrep library.
 
-%description devel -l pl
-Plik nag³ówkowy biblioteki memgrep.
+%description devel -l pl.UTF-8
+Plik nagÅ‚Ã³wkowy biblioteki memgrep.
 
 %package static
 Summary:	Static memgrep library
-Summary(pl):	Statyczna biblioteka memgrep
+Summary(pl.UTF-8):   Statyczna biblioteka memgrep
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Static memgrep library.
 
-%description static -l pl
+%description static -l pl.UTF-8
 Statyczna biblioteka memgrep.
 
 %prep
