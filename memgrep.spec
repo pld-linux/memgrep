@@ -1,5 +1,5 @@
 Summary:	Search, replace or dump memory from running apps and core files
-Summary(pl.UTF-8):   Przeszukiwanie, modyfikacja lub zrzucanie pamięci z aplikacji lub plików core
+Summary(pl.UTF-8):	Przeszukiwanie, modyfikacja lub zrzucanie pamięci z aplikacji lub plików core
 Name:		memgrep
 Version:	0.8.0
 Release:	1
@@ -26,7 +26,7 @@ odpluskwianie oraz szacowanie dziur.
 
 %package devel
 Summary:	Header file for memgrep library
-Summary(pl.UTF-8):   Plik nagłówkowy biblioteki memgrep
+Summary(pl.UTF-8):	Plik nagłówkowy biblioteki memgrep
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
@@ -38,7 +38,7 @@ Plik nagłówkowy biblioteki memgrep.
 
 %package static
 Summary:	Static memgrep library
-Summary(pl.UTF-8):   Statyczna biblioteka memgrep
+Summary(pl.UTF-8):	Statyczna biblioteka memgrep
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
